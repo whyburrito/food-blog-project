@@ -4,7 +4,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = $_POST['title'];
     $content = $_POST['content'];
-    $image = $_POST['image'];  // For simplicity, using a URL instead of file upload
+    $image = $_POST['image']; 
 
     $stmt = $conn->prepare("INSERT INTO Blog_Posts (title, content, image) VALUES (?, ?, ?)");
     $stmt->bind_param("sss", $title, $content, $image);
