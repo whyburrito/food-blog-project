@@ -82,7 +82,7 @@ window.onscroll = function buttons() {
 }
 
 function scrollToTop() {
-    document.getElementById("top").style.visibility = "hidden";
+    document.getElementById("scroll").style.visibility = "hidden";
     window.scrollTo({top: 0, behavior: "smooth"});
 }
 
