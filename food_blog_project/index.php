@@ -24,11 +24,12 @@ $is_admin = ($_SESSION['role'] === 'admin');
     
         <div class="text-end mb-3">
 
-        <?php if ($is_admin): ?>
+            <?php if ($is_admin): ?>
                 <a href="add.php" class="btn btn-add" id="create" onmouseover="createPost()"><img src="icons/add-post.png" height="20rem" width="20rem"><span></span></a>
             <?php endif; ?>
             <button class="btn btn-view" type="button" onclick="galleryView()" onmouseover="gallery()" id="gallery"><span></span><img src="icons/gallery.png" height="20rem" width="20rem"></button>
             <button class="btn btn-view" type="button" onclick="listView()" onmouseover="list()" id="list"><span></span><img src="icons/list.png" height="20rem" width="20rem"></button>
+            <a href="about.php" class="btn btn-view" type="button" id="about"><span></span><img src="icons/information.png" height="20rem" width="20rem"></a>
             <a href="logout.php" class="btn btn-view" type="button" onlick="logout()" onmouseover="logout()" id="logout"><span></span><img src="icons/logout.png" height="20rem" width="20rem"></a>
         </div>
 
