@@ -77,3 +77,14 @@ a img, button img {
 #create, #new {
     --bs-btn-padding-x: 0.5rem;
 }
+
+.card {
+    background-color: #edddc3;
+    border-radius: 12px;
+    border: 2px solid #ccc;
+}
+
+:root {
+    --bs-body-bg: #e7c68b !important; /* Light beige */
+}
+

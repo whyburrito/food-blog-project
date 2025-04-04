@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Add New Post</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
-<body class="container mt-4">
+<body class="container mt-4" style="background-color: #dbc7b4;">
     <h2>Add New Post</h2>
     <form method="POST">
         <div class="mb-3">
@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="text" name="title" class="form-control" required>
         </div>
         <div class="mb-3">
-            <label>Content:</label>
+            <label>Description:</label>
             <textarea name="content" class="form-control" required></textarea>
         </div>
         <div class="mb-3">
