@@ -1,79 +1,204 @@
-.list-row {
-    display: block;
-}
+/* index */
+    .list-row {
+        display: block;
+    }
 
-.list-col-md-4 {
-    width: 55%;
-    margin: auto;
-}
+    .list-col-md-4 {
+        width: 55%;
+        margin: auto;
+    }
 
-.list-card {
-    border-radius: 0;
-    border: none;
-    border-bottom: var(--bs-card-border-width) solid var(--bs-card-border-color);
-    padding-bottom: 1rem;
-}
+    .list-card {
+        border-radius: 0;
+        border: none;
+        border-bottom: var(--bs-card-border-width) solid var(--bs-card-border-color);
+        padding-bottom: 1rem;
+    }
 
-.btn-view {
-    --bs-btn-color: black;
-    --bs-btn-bg: rgb(216, 216, 216);
-    --bs-btn-border-color: rgb(216, 216, 216);
-    --bs-btn-hover-color: black;
-    --bs-btn-hover-bg: rgb(196, 196, 196);
-    --bs-btn-hover-border-color: rgb(196, 196, 196);
-    --bs-btn-focus-shadow-rgb: 60, 153, 110;
-    --bs-btn-active-color: black;
-    --bs-btn-active-bg: rgb(196, 196, 196);
-    --bs-btn-active-border-color: rgb(196, 196, 196);
-    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color: #black;
-    --bs-btn-disabled-bg: rgb(216, 216, 216);
-    --bs-btn-disabled-border-color: rgb(216, 216, 216);
-    --bs-border-radius: 2.5rem;
-    --bs-btn-padding-x: 0.5rem;
-    --bs-btn-padding-y: 0.375rem;
-}
+    a img, button img {
+        vertical-align: text-top;
+        opacity: 0.75;
+    }
 
-.btn-add {
-    float: left;
-    --bs-border-radius: 2.5rem;
-    margin-left: auto;
-    --bs-btn-color: black;
-    --bs-btn-bg: rgb(216, 216, 216);
-    --bs-btn-border-color: rgb(216, 216, 216);
-    --bs-btn-hover-color: black;
-    --bs-btn-hover-bg: rgb(196, 196, 196);
-    --bs-btn-hover-border-color: rgb(196, 196, 196);
-    --bs-btn-focus-shadow-rgb: 60, 153, 110;
-    --bs-btn-active-color: black;
-    --bs-btn-active-bg: rgb(196, 196, 196);
-    --bs-btn-active-border-color: rgb(196, 196, 196);
-    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color: #black;
-    --bs-btn-disabled-bg: rgb(216, 216, 216);
-    --bs-btn-disabled-border-color: rgb(216, 216, 216);
-}
+    #scroll, #new{
+        visibility: hidden;
+        position: sticky;
+        padding: 0.75rem;
+        bottom: 1.5rem;
+    }
 
-a img, button img {
-    vertical-align: text-top;
-    opacity: 0.75;
-}
+    #scroll {
+        float: right;
+    }
 
-#scroll, #new{
-    visibility: hidden;
-    position: sticky;
-    padding: 0.75rem;
-    bottom: 1.5rem;
-}
+    #new {
+        float: left;
+    }
 
-#scroll {
-    float: right;
-}
+    #create, #new {
+        --bs-btn-padding-x: 0.5rem;
+    }
 
-#new {
-    float: left;
-}
+    .card {
+        background-color: #edddc3;
+        border-radius: 12px;
+        border: 2px solid #ccc;
+    }
 
-#create, #new {
-    --bs-btn-padding-x: 0.5rem;
-}
+    .nav {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: block;
+    }
+
+    .img-navbar {
+        height: 5vh;
+        min-height: 50px;
+    }
+
+/* landing.page */
+    .logo, .header {
+        background: #EBDBCC;
+        float: left;
+        padding: 25px;
+        height: auto;
+        margin: 0;
+        border-radius: 25px 0 0 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header {
+        border-left: dashed 1px #E4D6C8;
+        border-radius: 0 25px 25px 0;
+        background: white;
+        padding: 25px;
+        height: auto;
+        margin: 0;
+        width: 50vw;
+    }
+
+    .heading {
+        box-shadow: 5px 10px 8px #D1B79F;
+        display: flex;
+        border-radius: 25px;
+        width: 60%;
+    }
+
+    .img-fluid {
+        height: 20vh;
+        min-height: 200px;
+    }
+
+    .auth {
+        --bs-btn-font-size: 1rem;
+    }
+
+/* login */
+    .form {
+        width: 26vw;
+        background: white;
+        border-radius: 0 25px 25px 0;
+    }
+
+    .form-control {
+        --bs-body-bg: #EBDBCC;
+    }
+
+/* buttons */
+    .btn-primary {
+        --bs-btn-color: white;
+        --bs-btn-bg: #BD9A75;
+        --bs-btn-border-color: #BD9A75;
+        --bs-btn-hover-color: black;
+        --bs-btn-hover-bg: #EBDBCC;
+        --bs-btn-hover-border-color: #EBDBCC;
+        --bs-btn-focus-shadow-rgb: 60, 153, 110;
+        --bs-btn-active-color: black;
+        --bs-btn-active-bg: #EBDBCC;
+        --bs-btn-active-border-color: #EBDBCC;
+        --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+        --bs-btn-disabled-color: #white;
+        --bs-btn-disabled-bg: #BD9A75;
+        --bs-btn-disabled-border-color: #BD9A75;
+        font-size: large;
+    }
+
+    .btn-info {
+        --bs-btn-color: white;
+        --bs-btn-bg: #7C5D3C;
+        --bs-btn-border-color: #7C5D3C;
+        --bs-btn-hover-color: black;
+        --bs-btn-hover-bg: #BD9A75;
+        --bs-btn-hover-border-color: #BD9A75;
+        --bs-btn-focus-shadow-rgb: 60, 153, 110;
+        --bs-btn-active-color: black;
+        --bs-btn-active-bg: #BD9A75;
+        --bs-btn-active-border-color: #BD9A75;
+        --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+        --bs-btn-disabled-color: #white;
+        --bs-btn-disabled-bg: #7C5D3C;
+        --bs-btn-disabled-border-color: #7C5D3C;
+    }
+
+    .btn-view {
+        --bs-btn-color: black;
+        --bs-btn-bg: rgb(216, 216, 216);
+        --bs-btn-border-color: rgb(216, 216, 216);
+        --bs-btn-hover-color: black;
+        --bs-btn-hover-bg: rgb(196, 196, 196);
+        --bs-btn-hover-border-color: rgb(196, 196, 196);
+        --bs-btn-focus-shadow-rgb: 60, 153, 110;
+        --bs-btn-active-color: black;
+        --bs-btn-active-bg: rgb(196, 196, 196);
+        --bs-btn-active-border-color: rgb(196, 196, 196);
+        --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+        --bs-btn-disabled-color: #black;
+        --bs-btn-disabled-bg: rgb(216, 216, 216);
+        --bs-btn-disabled-border-color: rgb(216, 216, 216);
+        --bs-border-radius: 2.5rem;
+        --bs-btn-padding-x: 0.5rem;
+        --bs-btn-padding-y: 0.375rem;
+    }
+    
+    .btn-add {
+        float: left;
+        --bs-border-radius: 2.5rem;
+        margin-left: auto;
+        --bs-btn-color: black;
+        --bs-btn-bg: rgb(216, 216, 216);
+        --bs-btn-border-color: rgb(216, 216, 216);
+        --bs-btn-hover-color: black;
+        --bs-btn-hover-bg: rgb(196, 196, 196);
+        --bs-btn-hover-border-color: rgb(196, 196, 196);
+        --bs-btn-focus-shadow-rgb: 60, 153, 110;
+        --bs-btn-active-color: black;
+        --bs-btn-active-bg: rgb(196, 196, 196);
+        --bs-btn-active-border-color: rgb(196, 196, 196);
+        --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+        --bs-btn-disabled-color: #black;
+        --bs-btn-disabled-bg: rgb(216, 216, 216);
+        --bs-btn-disabled-border-color: rgb(216, 216, 216);
+    }
+
+/* root */
+    body {
+        --bs-body-bg: #dbc7b4 !important;
+        font-family: Atma;
+        font-size: larger;
+    }
+
+    input {
+        font-family: sans-serif;
+    }
+
+/* colors {
+    D1B79F - shadow
+    dbc7b4 - bg
+    EBDBCC - light bg
+    7C5D3C - dark bg
+    BD9A75 - medium
+} */

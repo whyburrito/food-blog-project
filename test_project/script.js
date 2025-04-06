@@ -97,3 +97,14 @@ function createPost() {;
         this.style.paddingRight = "0.5rem";
     });
 }
+
+function logout() {
+    document.getElementById("logout").addEventListener("logout", function() {
+        this.querySelector("span").textContent = "Logout ";
+        this.style.paddingLeft = "0.75rem";
+    });
+    
+    document.getElementById("logout").addEventListener("logout", function() {
+        this.querySelector("span").textContent = "";
+    });
+}
