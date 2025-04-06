@@ -15,13 +15,17 @@ $is_admin = ($_SESSION['role'] === 'admin');
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
 </head>
-<body class=" mt-4" style="background-color: #dbc7b4;">
-    <div class="nav">
-        <div class="text-center">
-            <img src="icons/logo.png" alt="BBB Logo" class="img-navbar" >
-            <h2 class="fw-bold" style="text-transform: uppercase;">Boodle Bazinga Bonanza</h2>
+
+<body>
+    <div class="navbar mb-5" id="nav">
+        <img src="icons/logo.png" alt="BBB Logo" class="img-navbar">
+        <h5 class="fw-bold head-navbar" style="text-transform: uppercase; width: fit-content;">BBB</h5>
+        <div id="menu">
+            <a href="#" class="active">Home</a>
+            <a href="about.php">About</a>
+            <a href="logout.php">Logout</a>
         </div>
-    </div>    
+    </div>
 
     <div class="container">
         <div class="text-end mb-3">
@@ -30,8 +34,6 @@ $is_admin = ($_SESSION['role'] === 'admin');
             <?php endif; ?>
             <button class="btn btn-view" type="button" onclick="galleryView()" onmouseover="gallery()" id="gallery"><span></span><img src="icons/gallery.png" height="20rem" width="20rem"></button>
             <button class="btn btn-view" type="button" onclick="listView()" onmouseover="list()" id="list"><span></span><img src="icons/list.png" height="20rem" width="20rem"></button>
-            <a href="about.php" class="btn btn-view" type="button" id="about"><span></span><img src="icons/information.png" height="20rem" width="20rem"></a>
-            <a href="logout.php" class="btn btn-view" type="button" onlick="logout()" onmouseover="logout()" id="logout"><span></span><img src="icons/logout.png" height="20rem" width="20rem"></a>
         </div>
 
         <div class="row">
@@ -42,37 +44,40 @@ $is_admin = ($_SESSION['role'] === 'admin');
             <div class="col-md-4">
                 <div class="card mb-4">
                     <img src="<?php echo $row['image']; ?>" class="card-img-top" alt="Post Image">
-                    <div class="card-body">
+                    <?php if ($is_admin): ?>
+                        <div class="btn-group dropdown">
+                            <button type="button" class="btn btn-view btn-extra" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 2.5rem;"><img src="icons/information.png" height="15rem" width="15rem"></button>
+
+                            <ul class="dropdown-menu">
+                                <li><a href="edit.php?id=<?php echo $row['post_id']; ?>" class="btn btn-dropdown">Edit</a></li>
+                                <li></li><a href="delete.php?id=<?php echo $row['post_id']; ?>" class="btn btn-dropdown" onclick="return confirm('Delete this post?')">Delete</a></li>
+                            </ul>
+                        </div>
+                    <?php endif; ?>
+
+                    <div class="card-body" style="border-top: solid 1px #EBDBCC;">
                         <h5 class="card-title"><?php echo $row['title']; ?></h5>
                         <p class="card-text"><?php echo substr($row['content'], 0, 100) . '...'; ?></p>
-                        <!-- Trigger the Modal -->
-                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#postModal<?php echo $row['post_id']; ?>">
+                        <button class="btn btn-read" data-bs-toggle="modal" data-bs-target="#postModal<?php echo $row['post_id']; ?>">
                             Read More
                         </button>
-
-                        <?php if ($is_admin): ?>
-                            <a href="edit.php?id=<?php echo $row['post_id']; ?>" class="btn btn-warning btn-sm">Edit</a>
-                            <a href="delete.php?id=<?php echo $row['post_id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Delete this post?')">Delete</a>
-                        <?php endif; ?>
                     </div>
                 </div>
             </div>
-
-            <!-- Modal for this specific post -->
+            
+            <!-- Modal for Read More -->
             <div class="modal fade" id="postModal<?php echo $row['post_id']; ?>" tabindex="-1" aria-labelledby="postModalLabel<?php echo $row['post_id']; ?>" aria-hidden="true">
                 <div class="modal-dialog">
-                    <div class="modal-content">
+                    <div class="modal-content" style="min-width: 100%;">
                         <div class="modal-header">
                             <h5 class="modal-title" id="postModalLabel<?php echo $row['post_id']; ?>"><?php echo $row['title']; ?></h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="<?php echo $row['image']; ?>" class="img-fluid mb-3">
-                            <p><?php echo $row['content']; ?></p>
+                            <img src="<?php echo $row['image']; ?>" class="img-fluid-modal mb-3">
+                            <p style="margin-bottom: 5px;"><?php echo $row['content']; ?></p>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
+                        <div class="modal-footer"></div>
                     </div>
                 </div>
             </div>
