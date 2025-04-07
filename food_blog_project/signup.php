@@ -27,10 +27,45 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-<form method="POST">
-    <h2>Sign Up</h2>
-    <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
-    <input name="username" required placeholder="Username"><br>
-    <input name="password" type="password" required placeholder="Password"><br>
-    <button type="submit">Register</button>
-</form>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign Up - BBB</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Atma' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="d-flex flex-column justify-content-center align-items-center vh-100">
+    <div class="heading mb-5" style="width: 40%;">
+        <!-- Logo -->
+        <div class="text-center logo" style="background: white;">
+            <img src="icons/logo.png" alt="BBB Logo" class="img-fluid">
+            <div class="text-center mt-3">
+                <a href="landing.php" class="btn btn-secondary">← Back</a>
+            </div>
+        </div>
+
+        <!-- Right Column with Signup Form -->
+        <div class="col-md-6 p-4 form">
+            <h2 class="mb-4">Sign Up</h2>
+            <?php if (isset($error)) echo "<p class='text-danger'>$error</p>"; ?>
+            <form method="POST">
+                <div class="mb-3">
+                    <input name="username" class="form-control" required placeholder="Username">
+                </div>
+                <div class="mb-3">
+                    <input name="password" type="password" class="form-control" required placeholder="Password">
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                    <div class="d-inline">
+                        Already have an account? <a href="login.php" class="btn btn-link p-0">Log in!</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
