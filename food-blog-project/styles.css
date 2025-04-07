@@ -134,6 +134,16 @@
         width: 100%;
     }
 
+    .edit-card {
+        background: #dbc7b4;
+        margin: 0;
+        border-radius: 25px 0 0 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40vw;
+    }
+
 /* buttons */
     .btn-primary, .btn-secondary {
         font-size: medium;

@@ -42,6 +42,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <!-- Logo -->
         <div class="text-center logo" style="background: white;">
             <img src="icons/logo.png" alt="BBB Logo" class="img-fluid">
+            <div class="text-center mt-3">
+                <a href="landing.php" class="btn btn-secondary">← Back</a>
+            </div>
         </div>
 
         <!-- Right Column with Signup Form -->

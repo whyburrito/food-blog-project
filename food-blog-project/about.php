@@ -1,9 +1,5 @@
 <?php
-session_start();
-if (!isset($_SESSION['username'])) {
-    header("Location: landing.php");
-    exit();
-}
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -21,9 +17,15 @@ if (!isset($_SESSION['username'])) {
         <img src="icons/logo.png" alt="BBB Logo" class="img-navbar">
         <h5 class="fw-bold head-navbar" style="text-transform: uppercase; width: fit-content;">BBB</h5>
         <div id="menu">
+        <?php if (isset($_SESSION['username'])): ?>
             <a href="index.php">Home</a>
             <a href="about.php" class="active">About</a>
             <a href="logout.php">Logout</a>
+        <?php else: ?>
+            <a href="landing.php">Home</a>
+            <a href="about.php" class="active">About</a>
+            <a href="login.php">Login</a>
+        <?php endif; ?>
         </div>
     </div>
 
@@ -40,7 +42,7 @@ if (!isset($_SESSION['username'])) {
 
             <div class="team-member text-center my-2">
                 <h3 class="mb-2">Lloyd Lorenzo</h3>
-                <p>Description here</p>
+                <p>A programmer who loves to play games.</p>
             </div>
 
             <div class="team-member text-center my-2">
@@ -55,7 +57,7 @@ if (!isset($_SESSION['username'])) {
 
             <div class="team-member text-center my-2">
                 <h3 class="mb-2">Sean Salvador</h3>
-                <p>Description Here</p>
+                <p>A programmer who loves traveling and trying out new cuisines.</p>
             </div>  
         </div>
     </div>

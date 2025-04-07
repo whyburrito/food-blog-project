@@ -48,27 +48,41 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div class="d-flex flex-column justify-content-center align-items-center" style="height: 75vh! important;">
         <div class="heading mb-5">
-            <div class="text-center logo">
-                <?php
-                $result = $conn->query("SELECT * FROM Blog_Posts WHERE post_id=$post_id");
-                ?>
-                <div class="col-md-4">
+            <div class="edit-card">
+                <div style="width: 90%; height: 100%; padding-top: 25px;">
                     <div class="card mb-4">
-                        <img src="<?php echo $row['image']; ?>" class="card-img-top" alt="Post Image">
+                        <img src="<?php echo $post['image']; ?>" class="card-img-top" alt="Post Image">
                         <div class="card-body" style="border-top: solid 1px #EBDBCC;">
-                            <h5 class="card-title"><?php echo $row['title']; ?></h5>
-                            <p class="card-text"><?php echo substr($row['content'], 0, 100) . '...'; ?></p>
-                            <button class="btn btn-read" data-bs-toggle="modal" data-bs-target="#postModal<?php echo $row['post_id']; ?>">
+                            <h5 class="card-title"><?php echo $post['title']; ?></h5>
+                            <p class="card-text"><?php echo substr($post['content'], 0, 100) . '...'; ?></p>
+                            <button class="btn btn-read" data-bs-toggle="modal" data-bs-target="#postModal<?php echo $post['post_id']; ?>">
                                 Read More
                             </button>
+
+                            <!-- Modal for Read More -->
+                            <div class="modal fade" id="postModal<?php echo $post['post_id']; ?>" tabindex="-1" aria-labelledby="postModalLabel<?php echo $post['post_id']; ?>" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content" style="min-width: 100%;">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="postModalLabel<?php echo $post['post_id']; ?>"><?php echo $post['title']; ?></h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img src="<?php echo $post['image']; ?>" class="img-fluid-modal mb-3">
+                                            <p style="margin-bottom: 5px;"><?php echo $post['content']; ?></p>
+                                        </div>
+                                        <div class="modal-footer"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="text-center header">
+            <div class="header">
                 <h2>Edit Post</h2>
-                <form method="POST">
+                <form method="POST" style="width: 30vw;">
                     <div class="mb-3">
                         <label>Title:</label>
                         <input type="text" name="title" class="form-control edit-form" value="<?php echo $post['title']; ?>" required>
@@ -87,5 +101,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
     </div>
+
+    <!-- Bootstrap 5 Modal JavaScript (Required) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
