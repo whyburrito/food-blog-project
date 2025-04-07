@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="edit-card">
                 <div style="width: 90%; height: 100%; padding-top: 25px;">
                     <div class="card mb-4">
-                        <img src="<?php echo $post['image']; ?>" class="card-img-top" alt="Post Image">
+                        <img src="<?php echo $post['image']; ?>" class="card-img-top" alt="Post Image" style="min-height: 25vh;">
                         <div class="card-body" style="border-top: solid 1px #EBDBCC;">
                             <h5 class="card-title"><?php echo $post['title']; ?></h5>
                             <p class="card-text"><?php echo substr($post['content'], 0, 100) . '...'; ?></p>

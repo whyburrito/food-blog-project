@@ -40,11 +40,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body class="d-flex flex-column justify-content-center align-items-center vh-100">
     <div class="heading mb-5" style="width: 40%;">
         <!-- Logo -->
+        <div class="text-center mt-2" style="position: absolute;">
+            <a href="landing.php" class="btn btn-view btn-back"><img src="icons/back.png" height="10rem" width="10rem" style="margin: 0.2rem 0.2rem 0;"><span></span></a>
+        </div>
         <div class="text-center logo" style="background: white;">
             <img src="icons/logo.png" alt="BBB Logo" class="img-fluid">
-            <div class="text-center mt-3">
-                <a href="landing.php" class="btn btn-secondary">← Back</a>
-            </div>
         </div>
 
         <!-- Right Column with Signup Form -->

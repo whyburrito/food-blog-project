@@ -124,13 +124,14 @@ function createPost() {;
     });
 }
 
-function logout() {
-    document.getElementById("logout").addEventListener("logout", function() {
-        this.querySelector("span").textContent = "Logout ";
-        this.style.paddingLeft = "0.75rem";
+function back() {
+    document.getElementById("back").addEventListener("mouseover", function() {
+        this.querySelector("a span").textContent = "Back ";
+        this.style.paddingLeft = "0.5rem";
     });
     
-    document.getElementById("logout").addEventListener("logout", function() {
-        this.querySelector("span").textContent = "";
+    document.getElementById("back").addEventListener("mouseleave", function() {
+        this.querySelector("a span").textContent = "";
+        this.style.paddingLeft = "0.5rem";
     });
 }

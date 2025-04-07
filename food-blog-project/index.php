@@ -43,7 +43,7 @@ $is_admin = ($_SESSION['role'] === 'admin');
             ?>
             <div class="col-md-4">
                 <div class="card mb-4">
-                    <img src="<?php echo $row['image']; ?>" class="card-img-top" alt="Post Image">
+                    <img src="<?php echo $row['image']; ?>" class="card-img-top" alt="Post Image" style="min-height: 25vh;">
                     <?php if ($is_admin): ?>
                         <div class="btn-group dropdown">
                             <button type="button" class="btn btn-view btn-extra" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 2.5rem;"><img src="icons/dots.png" height="15rem" width="15rem"></button>
@@ -71,7 +71,7 @@ $is_admin = ($_SESSION['role'] === 'admin');
                                     <div class="modal-footer">
                                         <form method="GET" action="delete.php">
                                         <input type="hidden" name="id" value="<?php echo $row['post_id']; ?>">
-                                        <button type="submit" class="btn btn-danger">Yes, Delete</button>
+                                        <button type="submit" class="btn btn-danger">Delete</button>
                                         </form>
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                                     </div>
